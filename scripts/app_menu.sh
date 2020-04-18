@@ -1,3 +1,5 @@
+
+# script taken from https://github.com/adi1090x/polybar-themes/blob/master/polybar-1/scripts/menu
 #!/bin/bash
 
 # Custom Rofi Script
@@ -34,30 +36,24 @@ LIGHT_BLUE="#039be5"
 LIGHT_GREEN="#7cb342"
 
 # Launch Rofi
-MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'System :' \
+rofi -no-lazy-grab -show drun \
+-display-drun "Applications :" -drun-display-format "{name}" \
 -hide-scrollbar true \
 -bw 0 \
--lines 4 \
+-lines 10 \
 -line-padding 10 \
 -padding 20 \
--width 15 \
--xoffset 0 -yoffset 50 \
--location 3 \
--columns 1 \
+-width 30 \
+-xoffset 68 -yoffset -70 \
+-location 0 \
+-columns 2 \
 -show-icons -icon-theme "Papirus" \
--font "Fantasque Sans Mono 10" \
+-font "Fantasque Sans Mono 20" \
 -color-enabled true \
 -color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-active "$BACKGROUND,$MAGENTA,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
--color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
-<<< " Lock|  Logout|  Reboot|  Shutdown")"
-case "$MENU" in
-  *Lock) i3lock -c 000000 ;;
-  *Logout) i3-msg exit;;
-  *Reboot) reboot ;;
-  *Shutdown) shutdown now;;
-esac
+-color-urgent "$BACKGROUND,$YELLOW,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND"
 
 # More Options
 # -fullscreen \
