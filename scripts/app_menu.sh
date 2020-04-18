@@ -4,14 +4,6 @@
 
 # Custom Rofi Script
 
-BORDER="#1F1F1F"
-SEPARATOR="#1F1F1F"
-FOREGROUND="#FFFFFF"
-BACKGROUND="#1F1F1F"
-BACKGROUND_ALT="#252525"
-HIGHLIGHT_BACKGROUND="#00897b"
-HIGHLIGHT_FOREGROUND="#1F1F1F"
-
 BLACK="#000000"
 WHITE="#ffffff"
 RED="#e53935"
@@ -35,6 +27,14 @@ DEEP_ORANGE="#f4511e"
 LIGHT_BLUE="#039be5"
 LIGHT_GREEN="#7cb342"
 
+BORDER="#1F1F1F"
+SEPARATOR="#1F1F1F"
+FOREGROUND="#FFFFFF"
+BACKGROUND="#2f343f"
+BACKGROUND_ALT="#2f343f"
+HIGHLIGHT_BACKGROUND=$WHITE
+HIGHLIGHT_FOREGROUND=$BACKGROUND
+
 # Launch Rofi
 rofi -no-lazy-grab -show drun \
 -display-drun "Applications :" -drun-display-format "{name}" \
@@ -48,7 +48,7 @@ rofi -no-lazy-grab -show drun \
 -location 0 \
 -columns 2 \
 -show-icons -icon-theme "Papirus" \
--font "Fantasque Sans Mono 20" \
+-font "Monospace 20" \
 -color-enabled true \
 -color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
