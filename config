@@ -209,9 +209,9 @@ for_window [class = "Vpnui"] move to workspace $workspace10
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Vpnui"] floating enable
-for_window [class="Spotify"] floating enable
+for_window [class="Spotify"] floating enable, resize set 1500 1000
 floating_minimum_size 200 x 150
-floating_maximum_size 1000 x 800
+#floating_maximum_size 1000 x 800
 
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 2%+ && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%- && pkill -RTMIN+1 i3blocks
