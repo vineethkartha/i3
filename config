@@ -44,7 +44,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
+#i3-sensible-terminal
 
 # start emacs
 bindsym F1 exec emacs
@@ -114,7 +115,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-#bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child

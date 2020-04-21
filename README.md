@@ -11,3 +11,5 @@ sudo apt-install i3
 sudo apt install polybar
 
 sudo apt install xdotool
+
+sudo apt install alacritty
