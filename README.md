@@ -13,3 +13,5 @@ sudo apt install polybar
 sudo apt install xdotool
 
 sudo apt install alacritty
+
+sudo apt install i3-gaps
