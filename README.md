@@ -15,3 +15,7 @@ sudo apt install xdotool
 sudo apt install alacritty
 
 sudo apt install i3-gaps
+
+sudo apt install rofi
+
+sudo apt install feh
