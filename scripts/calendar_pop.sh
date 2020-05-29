@@ -4,7 +4,7 @@
 
 YAD_WIDTH=222  
 YAD_HEIGHT=100 
-DATE="$(date +"%a %d, %m %I:%M %p")"
+DATE="$(date +"%b %d, %a  %I:%M %p")"
 pos_x=2000
 pos_y=2000
 case "$1" in
