@@ -2,7 +2,7 @@
 # https://github.com/Jvanrhijn/polybar-spotify
 # Further customisations were done to support controling the play,pause and changing tracks
 
-#!/bin/python
+#!/bin/python3
 
 import sys
 import dbus
