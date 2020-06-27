@@ -224,6 +224,8 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 
 # Lock Screen
 bindsym $mod+x exec betterlockscreen -l dim
+# To refresh the lock screen
+# betterlockscreen -u <path to the image file>
 #exec_always feh --bg-scale $HOME/Pictures/wallpapers/housefly.jpg
 # script that will change the wallpaper
 exec_always --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
