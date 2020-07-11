@@ -1,7 +1,7 @@
 #!/bin/bash
 if [ "$1" = "default" ]; then
     noOfPackages=$(apt-get -s dist-upgrade | awk '/^Inst/ { print $2 }'|wc -l)
-    echo $noOfPackages " updates"
+    echo $noOfPackages 
 fi
 
 if [ "$1" = "list" ]; then
