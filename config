@@ -206,7 +206,7 @@ gaps outer $outer_gaps
 assign [class="krdc"] $workspace2
 assign [class="Brave-browser"] $workspace4
 assign [class="Microsoft Teams - Preview"] $workspace3
-assign [class="rambox"] $workspace5
+assign [class="Rambox"] $workspace5
 for_window [title="Microsoft Teams Notification"] floating enable
 for_window [title="Microsoft Teams Notification"] move to workspace $workspace3
 for_window [class = "Spotify"] move to workspace $workspace10
