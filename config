@@ -49,9 +49,9 @@ bindsym $mod+Return exec gnome-terminal
 # start emacs
 bindsym F1 exec emacs
 # start qutebrowser
-bindsym $mod+c exec qutebrowser
+bindsym $mod+b exec qutebrowser
 
-bindsym $mod+d exec $HOME/.config/i3/scripts/app_menu.sh
+bindsym $mod+x exec $HOME/.config/i3/scripts/app_menu.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -176,7 +176,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Delete exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #bindsym $mod+Shift+e exec "$HOME/.config/i3/scripts/exit_menu.sh"
 # resize window (you can also use the mouse for that)
@@ -209,13 +209,24 @@ assign [class="Microsoft Teams - Preview"] $workspace3
 assign [class="Rambox"] $workspace5
 for_window [title="Microsoft Teams Notification"] floating enable
 for_window [title="Microsoft Teams Notification"] move to workspace $workspace3
-for_window [class = "Spotify"] move to workspace $workspace10
-for_window [class = "Vpnui"] move to workspace $workspace10
+#for_window [class = "Spotify"] move to workspace $workspace10
+#for_window [class = "Vpnui"] move to workspace $workspace10
+
+# Scratch Pads-----------
+# Cisco VPN connect
+for_window [class="Vpnui"] floating enable
+for_window [class = "Vpnui"] move scratchpad
+bindsym $mod+bracketleft [class = "Vpnui"] scratchpad show, resize set 1200 650
+
+# Spotify
+for_window [class="Spotify"] floating enable, resize set 1500 1000
+for_window [class = "Spotify"] move scratchpad
+bindsym $mod+bracketright [class = "Spotify"] scratchpad show, resize set 1700 1200
 
 for_window [class="Yad" title="yad-calendar"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Vpnui"] floating enable
-for_window [class="Spotify"] floating enable, resize set 1500 1000
+
+
 floating_minimum_size 200 x 150
 #floating_maximum_size 1000 x 800
 
@@ -224,7 +235,7 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%- && pkill -R
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # Lock Screen
-bindsym $mod+x exec betterlockscreen -l dim
+bindsym $mod+Prior exec betterlockscreen -l dim
 # To refresh the lock screen
 # betterlockscreen -u <path to the image file>
 #exec_always feh --bg-scale $HOME/Pictures/wallpapers/housefly.jpg
