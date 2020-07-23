@@ -36,6 +36,7 @@ HIGHLIGHT_BACKGROUND=$WHITE
 HIGHLIGHT_FOREGROUND=$BACKGROUND
 
 # Launch Rofi
+echo "start"
 rofi -no-lazy-grab -show drun \
 -display-drun "Applications :" -drun-display-format "{name}" \
 -hide-scrollbar true \

@@ -247,6 +247,6 @@ exec --no-startup-id i3-msg 'workspace $workspace1; exec emacs; workspace $works
 exec --no-startup-id i3-msg 'workspace $workspace2; exec krdc; workspace $workspace2'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec teams; workspace $workspace3'
 exec --no-startup-id i3-msg 'workspace $workspace5; exec rambox; workspace $workspace5'
-exec --no-startup-id i3-msg 'workspace $workspace10; exec spotify; workspace $workspace10'
+exec --no-startup-id i3-msg 'exec spotify;'
 
 
