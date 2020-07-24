@@ -238,10 +238,10 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 bindsym $mod+Prior exec betterlockscreen -l dim
 # To refresh the lock screen
 # betterlockscreen -u <path to the image file>
-#exec_always feh --bg-scale $HOME/Pictures/wallpapers/housefly.jpg
+
 # script that will change the wallpaper
 exec_always --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
-exec_always --no-startup-id $HOME/.config/i3/scripts/launchpBar.sh
+exec_always --no-startup-id $HOME/.config/i3/scripts/launch_polybar.sh
 
 exec --no-startup-id i3-msg 'workspace $workspace1; exec emacs; workspace $workspace1'
 exec --no-startup-id i3-msg 'workspace $workspace2; exec krdc; workspace $workspace2'

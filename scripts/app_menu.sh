@@ -24,18 +24,18 @@ aurora_yellow="#EBCB8B"
 aurora_green="#A3BE8C"
 aurora_pink="#B48EAD"
 
-BORDER=$polar_night1
+BORDER=$snow_storm3
 SEPARATOR=$snow_storm3
 FOREGROUND=$snow_storm1
 BACKGROUND=$polar_night1
 BACKGROUND_ALT=$polar_night2
 HIGHLIGHT_BACKGROUND=$frost4
-HIGHLIGHT_FOREGROUND=$snow_storm3
+HIGHLIGHT_FOREGROUND=$aurora_yellow
 
 # Launch Rofi
 echo "start"
 rofi -no-lazy-grab -show drun \
--display-drun "Applications :" -drun-display-format "{name}" \
+-display-drun "Applications" -drun-display-format "{name}" \
 -hide-scrollbar true \
 -bw 0 \
 -lines 10 \
@@ -55,8 +55,7 @@ rofi -no-lazy-grab -show drun \
 
 # More Options
 # -fullscreen \
-
-# Theming help
+ help
 # color window = background, border, separator
 # color normal = background, foreground, background-alt, highlight-background, highlight-foreground
 # color active = background, foreground, background-alt, highlight-background, highlight-foreground
