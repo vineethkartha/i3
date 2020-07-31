@@ -11,8 +11,8 @@ INC=2  # Increment when lowering/rising the volume
 MAX_VOL=100  # Maximum volume
 AUTOSYNC="no"  # All programs have the same volume if enabled
 VOLUME_ICONS=(" " " ")  # Volume icons array, from lower volume to higher
-MUTED_ICON="  "  # Muted volume icon
-MUTED_COLOR="%{F#B48EAD}"  # Color when the audio is muted
+MUTED_ICON=" "  # Muted volume icon
+MUTED_COLOR="%{F#BF616A}"  # Color when the audio is muted
 NOTIFICATIONS="yes"  # Notifications when switching sinks if enabled
 SINK_ICON=""  # Icon always shown to the left of the default sink names
 
