@@ -25,9 +25,11 @@ SINK_BLACKLIST=(
 # Maps PulseAudio sink names to human-readable names
 declare -A SINK_NICKNAMES
 SINK_NICKNAMES["alsa_output.usb-SomeManufacturer_SomeUsbSoundcard-00.analog-stereo"]="External Soundcard"
-SINK_NICKNAMES["alsa_output.pci-0000_2b_00.4.analog-stereo"]=""
+SINK_NICKNAMES["alsa_output.pci-0000_2b_00.4.analog-stereo"]=""
 SINK_NICKNAMES["alsa_output.pci-0000_29_00.1.hdmi-stereo"]=""
 SINK_NICKNAMES["alsa_output.usb-Plantronics_Plantronics_Blackwire_325.1_A6BEA4EB746047B3B0608215518EDCF5-00.analog-stereo"]=""
+SINK_NICKNAMES["bluez_sink.00_00_00_00_33_6F.a2dp_sink"]=""
+SINK_NICKNAMES["bluez_sink.20_19_12_2B_36_3F.a2dp_sink"]=""
 # Environment & global constants for the script
 LANGUAGE=en_US  # Some calls depend on English outputs of pactl
 END_COLOR="%{F-}"
