@@ -106,12 +106,12 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+g focus child
 
-set $workspace1 "1:"
+set $workspace1 "1: "
 set $workspace2 "2:"
-set $workspace3 "3:"
-set $workspace4 "4: "
-set $workspace5 "5:"
-set $workspace10 "10:"
+set $workspace3 "3: "
+set $workspace4 "4: "
+set $workspace5 "5:  "
+set $workspace10 "10:"
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -185,12 +185,12 @@ for_window [class="^.*"] border none
 gaps inner $inner_gaps
 gaps outer $outer_gaps
 
-assign [class="krdc"] $workspace2
 assign [class="Brave-browser"] $workspace4
 assign [class="Microsoft Teams - Preview"] $workspace3
 assign [class="Rambox"] $workspace3
 for_window [title="Microsoft Teams Notification"] floating enable
 for_window [title="Microsoft Teams Notification"] move to workspace $workspace3
+for_window [title="reddit: the front page of the internet - qutebrowser"] move to workspace $workspace5
 
 # Scratch Pads-----------
 # Cisco VPN connect
@@ -232,10 +232,12 @@ bindsym $mod+Prior exec betterlockscreen -l dim
 exec_always --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
 exec_always --no-startup-id $HOME/.config/i3/scripts/launch_polybar.sh
 
-exec --no-startup-id i3-msg 'workspace $workspace1; exec gnome-terminal; workspace $workspace1'
-exec --no-startup-id i3-msg 'workspace $workspace2; exec krdc; workspace $workspace2'
-exec --no-startup-id i3-msg 'workspace $workspace3; exec teams; workspace $workspace3'
-exec --no-startup-id i3-msg 'workspace $workspace3; exec rambox; workspace $workspace3'
+exec --no-startup-id i3-msg 'workspace $workspace1; exec gnome-terminal;workspace $workspace1;'
+exec --no-startup-id i3-msg 'workspace $workspace1; exec krdc;workspace $workspace1;'
+exec --no-startup-id i3-msg 'workspace $workspace3; exec teams;workspace $workspace3;'
+exec --no-startup-id i3-msg 'workspace $workspace3; exec rambox;workspace $workspace3;'
+exec --no-startup-id i3-msg 'exec qutebrowser --target window reddit.com;'
 exec --no-startup-id i3-msg 'exec spotify;'
 exec --no-startup-id i3-msg 'exec terminator;'
-exec --no-startup-id i3-msg 'exec blueman-manager;'
+#exec --no-startup-id i3-msg 'exec blueman-manager;'
+exec --no-startup-id i3-msg 'workspace $workspace1;'
