@@ -229,15 +229,15 @@ bindsym $mod+Prior exec betterlockscreen -l dim
 # betterlockscreen -u <path to the image file>
 
 # script that will change the wallpaper
-exec_always --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/dew.jpg
+#exec_always --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
 exec_always --no-startup-id $HOME/.config/i3/scripts/launch_polybar.sh
 
+exec --no-startup-id i3-msg 'exec spotify;'
+exec --no-startup-id i3-msg 'exec qutebrowser --target window reddit.com;'
 exec --no-startup-id i3-msg 'workspace $workspace1; exec gnome-terminal;workspace $workspace1;'
 exec --no-startup-id i3-msg 'workspace $workspace1; exec krdc;workspace $workspace1;'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec teams;workspace $workspace3;'
 exec --no-startup-id i3-msg 'workspace $workspace3; exec rambox;workspace $workspace3;'
-exec --no-startup-id i3-msg 'exec qutebrowser --target window reddit.com;'
-exec --no-startup-id i3-msg 'exec spotify;'
 exec --no-startup-id i3-msg 'exec terminator;'
-#exec --no-startup-id i3-msg 'exec blueman-manager;'
 exec --no-startup-id i3-msg 'workspace $workspace1;'
