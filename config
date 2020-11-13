@@ -9,6 +9,28 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+## Color scheme
+set $polar-night1 #2E3440
+set $polar-night2 #3B4252
+set $polar-night3 #434C5E
+set $polar-night4 #4C566A
+
+set $snow-storm1 #D8DEE9
+set $snow-storm2 #E5E9F0
+set $snow-storm3 #ECEFF4
+
+set $frost1 #8FBCBB
+set $frost2 #88C0D0
+set $frost3 #81A1C1
+set $frost4 #5E81AC
+
+set $aurora_red #BF616A
+set $aurora_amber #D08770
+set $aurora_yellow #EBCB8B
+set $aurora_green #A3BE8C
+set $aurora_pink #B48EAD
+################################
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -27,18 +49,28 @@ font pango: System San Francisco Display 10
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Defining the color scheme
-set $bg-color 	         #D8DEE9
-set $inactive-bg-color   #2E3440
-set $text-color          #2E3440
-set $inactive-text-color #D8DEE9
-set $urgent-bg-color     #BF616A
+#set $bg-color 	         #D8DEE9
+#set $inactive-bg-color   #2E3440
+#set $text-color          #2E3440
+#set $inactive-text-color #D8DEE9
+#set $urgent-bg-color     #BF616A
+
+set $active-bg 	   #D8DEE9
+set $active-text   #2E3440
+set $active-border #D08770
+
+set $inactive-bg     #4C566A
+set $inactive-text   #D8DEE9
+set $inactive-border #2E3440
+
+set $urgent-bg     #EBCB8B
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color         00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color 00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color 00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color         00ff00
+#                       border        background    text            indicator child_border
+client.focused          $active-bg    $active-bg    $active-text    00ff00    $active-border
+client.unfocused        $inactive-bg  $inactive-bg  $inactive-text  00ff00    $inactive-border
+client.focused_inactive $inactive-bg  $inactive-bg  $inactive-text  00ff00    $inactive-border
+client.urgent           $urgent-bg    $urgent-bg    $active-text    00ff00    $urgent-bg
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -178,9 +210,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Delete exec $HOME/.config/i3/scripts/exit_menu.sh
 
-set $inner_gaps 5
+set $inner_gaps 7
 set $outer_gaps 5
-for_window [class="^.*"] border none
+for_window [class="^.*"] border normal
 
 gaps inner $inner_gaps
 gaps outer $outer_gaps
@@ -229,7 +261,7 @@ bindsym $mod+Prior exec betterlockscreen -l dim
 # betterlockscreen -u <path to the image file>
 
 # script that will change the wallpaper
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/dew.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/praying_mantis.jpg
 #exec_always --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
 exec_always --no-startup-id $HOME/.config/i3/scripts/launch_polybar.sh
 
@@ -237,5 +269,6 @@ exec_always --no-startup-id $HOME/.config/i3/scripts/launch_polybar.sh
 bindsym $mod+Next exec $HOME/.config/i3/scripts/restoreWks.sh
 
 #exec --no-startup-id i3-msg $HOME/.config/i3/scripts/restoreWks.sh
-exec --no-startup-id i3-msg 'exec spotify;'
+#exec --no-startup-id i3-msg 'exec spotify;'
 exec --no-startup-id i3-msg 'exec terminator;'
+exec --no-startup-id i3-msg 'exec compton;'

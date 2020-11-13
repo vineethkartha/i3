@@ -7,9 +7,9 @@
 #fi
 status=$(nmcli radio wifi)
 if [ "$status" = "enabled" ]; then
-    echo ""
+    echo " "
 else
-    echo ""
+    echo " "
 fi
 
 # Toggle the wifi connectivity
