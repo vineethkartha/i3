@@ -36,7 +36,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:monospace 9
-font pango: System San Francisco Display 10
+font pango: System San Francisco Display 3
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -55,9 +55,9 @@ font pango: System San Francisco Display 10
 #set $inactive-text-color #D8DEE9
 #set $urgent-bg-color     #BF616A
 
-set $active-bg 	   #D8DEE9
+set $active-bg 	   #8FBCBB
 set $active-text   #2E3440
-set $active-border #D08770
+set $active-border #5E81AC
 
 set $inactive-bg     #4C566A
 set $inactive-text   #D8DEE9
