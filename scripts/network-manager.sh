@@ -16,8 +16,10 @@ fi
 if [ "$1" = "togglewifi" ]; then
     if [ "$status" = "enabled" ]; then
 	nmcli radio wifi off
+	    notify-send "Wifi disabled"
     else
 	nmcli radio wifi on
+	notify-send "Wifi enabled"
     fi
 fi
 

@@ -138,11 +138,11 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+g focus child
 
-set $workspace1 "1: "
+set $workspace1 "1:"
 set $workspace2 "2:"
-set $workspace3 "3: "
-set $workspace4 "4: "
-set $workspace5 "5:  "
+set $workspace3 "3:"
+set $workspace4 "4:"
+set $workspace5 "5:"
 set $workspace10 "10:"
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -256,7 +256,8 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%- && pkill -R
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # Lock Screen
-bindsym $mod+Prior exec betterlockscreen -l dim
+#bindsym $mod+Prior exec betterlockscreen -l dim
+bindsym $mod+Prior exec $HOME/.config/i3/scripts/lock.sh
 # To refresh the lock screen
 # betterlockscreen -u <path to the image file>
 
@@ -264,6 +265,8 @@ bindsym $mod+Prior exec betterlockscreen -l dim
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/praying_mantis.jpg
 #exec_always --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
 exec_always --no-startup-id $HOME/.config/i3/scripts/launch_polybar.sh
+
+#exec_always --no-startup-id $HOME/Tools/polybar-collection/launch.sh
 
 # Load all the workspaces as needed
 bindsym $mod+Next exec $HOME/.config/i3/scripts/restoreWks.sh
