@@ -10,8 +10,8 @@ OSD="no"  # On Screen Display message for KDE if enabled
 INC=2  # Increment when lowering/rising the volume
 MAX_VOL=100  # Maximum volume
 AUTOSYNC="no"  # All programs have the same volume if enabled
-VOLUME_ICONS=(" " " ")  # Volume icons array, from lower volume to higher
-MUTED_ICON=" "  # Muted volume icon
+VOLUME_ICONS=("奔 " "墳 ")  # Volume icons array, from lower volume to higher
+MUTED_ICON="婢"  # Muted volume icon
 MUTED_COLOR="%{F#BF616A}"  # Color when the audio is muted
 NOTIFICATIONS="yes"  # Notifications when switching sinks if enabled
 SINK_ICON=""  # Icon always shown to the left of the default sink names
@@ -25,11 +25,11 @@ SINK_BLACKLIST=(
 # Maps PulseAudio sink names to human-readable names
 declare -A SINK_NICKNAMES
 SINK_NICKNAMES["alsa_output.usb-SomeManufacturer_SomeUsbSoundcard-00.analog-stereo"]="External Soundcard"
-SINK_NICKNAMES["alsa_output.pci-0000_2b_00.4.analog-stereo"]=""
+SINK_NICKNAMES["alsa_output.pci-0000_2b_00.4.analog-stereo"]="蓼"
 SINK_NICKNAMES["alsa_output.pci-0000_29_00.1.hdmi-stereo"]=""
 SINK_NICKNAMES["alsa_output.usb-Plantronics_Plantronics_Blackwire_325.1_A6BEA4EB746047B3B0608215518EDCF5-00.analog-stereo"]=""
-SINK_NICKNAMES["bluez_sink.00_00_00_00_33_6F.a2dp_sink"]=""
-SINK_NICKNAMES["bluez_sink.20_19_12_2B_36_3F.a2dp_sink"]=""
+SINK_NICKNAMES["bluez_sink.00_00_00_00_33_6F.a2dp_sink"]="蓼"
+SINK_NICKNAMES["bluez_sink.20_19_12_2B_36_3F.a2dp_sink"]=""
 # Environment & global constants for the script
 LANGUAGE=en_US  # Some calls depend on English outputs of pactl
 END_COLOR="%{F-}"
@@ -289,9 +289,9 @@ function output() {
 
     # Showing the formatted message
     if [ "$isMuted" = "yes" ]; then
-        echo "${MUTED_COLOR}${MUTED_ICON}${curVol}%   ${SINK_ICON}${nickname}${END_COLOR}"
+        echo "${MUTED_COLOR}${MUTED_ICON}${curVol}% ${SINK_ICON}${nickname}${END_COLOR}"
     else
-        echo "${volIcon}${curVol}%   ${SINK_ICON}${nickname}"
+        echo "${volIcon}${curVol}% ${SINK_ICON}${nickname}"
     fi
 }
 
