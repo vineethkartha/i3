@@ -143,7 +143,7 @@ set $workspace2 "2:"
 set $workspace3 "3:﫮"
 set $workspace4 "4:"
 set $workspace5 "5:"
-set $workspace10 "10:"
+set $workspace10 "10: "
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -262,7 +262,7 @@ bindsym $mod+Prior exec $HOME/.config/i3/scripts/lock.sh
 # betterlockscreen -u <path to the image file>
 
 # script that will change the wallpaper
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/praying_mantis.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/caterpillar_2.jpg
 #exec_always --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
 exec_always --no-startup-id $HOME/.config/i3/scripts/launch_polybar.sh
 

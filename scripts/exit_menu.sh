@@ -42,15 +42,15 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'PowerOff' \
 -location 3 \
 -columns 1 \
 -show-icons -icon-theme "Papirus" \
--font "Monospace 18" \
+-font "JetBrainsMono 24" \
 -color-enabled true \
 -color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-active "$BACKGROUND,$aurora_red,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-urgent "$BACKGROUND,$aurora_yellow,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
-<<< " Lock|  Logout|  Reboot|  Shutdown")"
+<<< " Lock|  Logout|  Reboot|  Shutdown")"
 case "$MENU" in
-  *Lock) betterlockscreen -l dim;;
+  *Lock) /home/vineeth/.config/i3/scripts/lock.sh;;
   *Logout) i3-msg exit;;
   *Reboot) reboot ;;
   *Shutdown) shutdown now;;
