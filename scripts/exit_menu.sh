@@ -28,27 +28,27 @@ FOREGROUND=$snow_storm1
 BACKGROUND=$polar_night1
 BACKGROUND_ALT=$polar_night2
 HIGHLIGHT_BACKGROUND=$frost4
-HIGHLIGHT_FOREGROUND=$aurora_yellow
+HIGHLIGHT_FOREGROUND=$aurora_red
 
 # Launch Rofi
-MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p 'PowerOff' \
+MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -p "$(uptime -p)" -selected-row 1\
 -hide-scrollbar true \
 -bw 0 \
--lines 4 \
+-lines 1 \
 -line-padding 10 \
 -padding 20 \
--width 15 \
--xoffset 0 -yoffset 50 \
--location 3 \
--columns 1 \
+-width 2500 \
+-xoffset 0 -yoffset -100 \
+-location 0 \
+-columns 4 \
 -show-icons -icon-theme "Papirus" \
--font "JetBrainsMono 24" \
+-font "JetBrainsMono 50" \
 -color-enabled true \
 -color-window "$BACKGROUND,$BORDER,$SEPARATOR" \
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-active "$BACKGROUND,$aurora_red,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-urgent "$BACKGROUND,$aurora_yellow,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
-<<< " Lock|  Logout|  Reboot|  Shutdown")"
+<<< " Lock| Logout| Restart| Shutdown")"
 case "$MENU" in
   *Lock) /home/vineeth/.config/i3/scripts/lock.sh;;
   *Logout) i3-msg exit;;
