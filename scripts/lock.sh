@@ -7,7 +7,7 @@ i3lock --nofork                 \
     --bshlcolor=d8dee922	\
     --separatorcolor=00000000   \
     --radius=0			\
-    --indpos="1475:700"		\
+    --indpos="968:240"		\
     \
     --insidevercolor=00000000	\
     --insidewrongcolor=00000000 \
@@ -22,7 +22,7 @@ i3lock --nofork                 \
     --timestr="%I:%M %p"	\
     --time-font="BatmanForeverAlternate"	\
     --timesize=95		\
-    --timepos="1425:900"		\
+    --timepos="400:100"		\
     --timecolor=ebcb8bff	\
     \
     --datecolor=ebcb8bff	\
@@ -30,11 +30,11 @@ i3lock --nofork                 \
     --datecolor=ebcb8bff	\
     --date-font="BatmanForeverAlternate"	\
     --datesize=45		\
-    --datepos="tx:1025"	\
+    --datepos="tx:225"	\
     \
     --veriftext=""		\
     --wrongtext=""		\
     \
     --indicator			\
     \
-    --image=/home/vineeth/Pictures/wallpaper_internet/batman.jpg
+    --image=/home/vineeth/Pictures/wallpaper_internet/ch.jpg
