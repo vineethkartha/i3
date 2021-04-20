@@ -230,6 +230,8 @@ for_window [class="Vpnui"] floating enable
 for_window [class = "Vpnui"] move scratchpad
 bindsym $mod+bracketleft [class = "Vpnui"] scratchpad show, resize set 1200 650
 
+for_window [class="UXTerm"] floating enable, resize set 1500 1000
+
 # Spotify
 for_window [class="Spotify"] floating enable, resize set 1500 1000
 for_window [class = "Spotify"] move scratchpad
