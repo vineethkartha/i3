@@ -1,5 +1,6 @@
-# script from https://github.com/haideralipunjabi/polybar-browsermediacontrol
 #!/usr/bin/python3
+
+# script from https://github.com/haideralipunjabi/polybar-browsermediacontrol
 from pydbus import SessionBus
 from gi.repository import GLib
 import sys
