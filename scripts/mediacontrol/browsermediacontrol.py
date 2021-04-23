@@ -15,7 +15,7 @@ ICON_PREV = "\uf9ad"
 ICON = ""
 ICON_MAIN = "\uf2ce"
 PATH=os.path.realpath(__file__)
-TITLE_LENGTH = 25
+TITLE_LENGTH = 40
 MEDIA_ICONS = {
     'amazon': '\uf52c',
     'spotify': '\uf1bc',
@@ -74,9 +74,21 @@ if Player.PlaybackStatus != "Stopped":
     if args.limit:
         TITLE_LENGTH = args.limit
 
-    title = Player.Metadata["xesam:title"]
+    totalLength = Player.Metadata["mpris:length"]
+    currentPosition = Player.Position
+    timeLeftToCompletion = (totalLength - currentPosition)/1000000
+    mins,sec = divmod(timeLeftToCompletion,60)
+    totalMins, totalSec = divmod(totalLength/1000000,60)
+    remainingTime_print = "{:02.0f}".format(mins)+ ":" + "{:02.0f}".format(sec)
+    totalTime_print = "{:02.0f}".format(totalMins)+ ":" + "{:02.0f}".format(totalSec)
+    #percentComplete = "("+str(round((currentPosition/totalLength)*100,1)) + "%)"
+
+    artist = Player.Metadata["xesam:artist"] + ": " 
+    title = Player.Metadata["xesam:title"] 
+
     media_icon = get_media_icon(Player.Metadata["xesam:url"].lower())
-    output = action("prev", ICON_PREV) + " " + action("playpause", ICON) + " " + action("next", ICON_NEXT) + " | " + ( f"{media_icon}  " if media_icon else "" ) + truncate(title, TITLE_LENGTH)
+    
+    output = action("prev", ICON_PREV) + " " + action("playpause", ICON) + " " + action("next", ICON_NEXT) + " | " + remainingTime_print +"/" +totalTime_print + " | " + ( f"{media_icon}  " if media_icon else "" ) + artist +truncate(title, TITLE_LENGTH)
     print(output)
 else:
     print("\uf2ce : No podcasts found")

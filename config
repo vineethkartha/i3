@@ -80,6 +80,7 @@ bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 # start emacs
 bindsym F1 exec emacs
+bindsym F2 exec sxiv -t /mnt/d_drive/Exported
 # start qutebrowser
 bindsym $mod+b exec qutebrowser
 
@@ -141,8 +142,8 @@ bindsym $mod+g focus child
 set $workspace1 "1:"
 set $workspace2 "2:刺"
 set $workspace3 "3:﫮"
-set $workspace4 "4:"
-set $workspace5 "5:"
+set $workspace4 "4:"
+set $workspace5 "5:"
 set $workspace10 "10: "
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -258,22 +259,14 @@ bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%- && pkill -R
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # Lock Screen
-#bindsym $mod+Prior exec betterlockscreen -l dim
 bindsym $mod+Prior exec $HOME/.config/i3/scripts/lock.sh
-# To refresh the lock screen
-# betterlockscreen -u <path to the image file>
 
 # script that will change the wallpaper
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpapers/spider.jpg
-#exec_always --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
+exec_always --no-startup-id $HOME/.fehbg &
 exec_always --no-startup-id $HOME/.config/i3/scripts/launch_polybar.sh
-
-#exec_always --no-startup-id $HOME/Tools/polybar-collection/launch.sh
 
 # Load all the workspaces as needed
 bindsym $mod+Next exec $HOME/.config/i3/scripts/restoreWks.sh
 
-#exec --no-startup-id i3-msg $HOME/.config/i3/scripts/restoreWks.sh
-#exec --no-startup-id i3-msg 'exec spotify;'
 exec --no-startup-id i3-msg 'exec terminator;'
 exec --no-startup-id i3-msg 'exec compton;'
