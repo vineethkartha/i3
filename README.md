@@ -5,22 +5,27 @@
   By default the polybar is enabled.
 * Required Packages
   For all the scripts and configuration files to work, the following packages need to be installed.
-  =sudo apt install yad=
-  =sudo apt install i3=
-  =sudo apt install polybar=
-  =sudo apt install xdotool=
-  =sudo apt install i3-gaps=
-  =sudo apt install rofi=
-  =sudo apt install feh=
-  =sudo apt install emacs=
-  =sudo apt install python-dbus=
-  =sudo apt install plasma-browser-integration=
-  =sudo apt install sxiv=
-  =sudo apt install zathura= 
-  =sudo apt install ranger= 
-  =sudo apt install xterm=  
-  =sudo apt install terminator=  
-  =sudo apt install fish=  
+  1. yad
+  2. i3
+  3. polybar
+  4. xdotool
+  5. i3-gaps
+  6. rofi
+  7. feh
+  8. emacs
+  9. python-dbus
+  10. plasma-browser-integration
+  11. sxiv
+  12. zathura
+  13. ranger
+  14. xterm
+  15. terminator
+  16. fish
+
+  Use the the command to install all these packages in emacs 
+  =sudo apt install yad i3 polybar i3-gaps rofi feh xdotool emacs
+  python-dbus plasma-browser-integration sxiv zathura ranger xterm
+  terminator fish
 ** Workspace handling 
    install i3-resurrect to save the workspace and autoload them
    =i3-resurrect save --swallow=class,instance -d .config/i3-resurrect/
