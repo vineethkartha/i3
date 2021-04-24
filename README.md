@@ -23,9 +23,11 @@
   16. fish
 
   Use the the command to install all these packages in emacs 
-  =sudo apt install yad i3 polybar i3-gaps rofi feh xdotool emacs
+  #+begin_example
+  sudo apt install yad i3 polybar i3-gaps rofi feh xdotool emacs
   python-dbus plasma-browser-integration sxiv zathura ranger xterm
   terminator fish
+  #+end_example
 ** Workspace handling 
    install i3-resurrect to save the workspace and autoload them
    =i3-resurrect save --swallow=class,instance -d .config/i3-resurrect/
