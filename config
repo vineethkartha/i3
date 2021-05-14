@@ -231,13 +231,6 @@ for_window [class="Vpnui"] floating enable
 for_window [class = "Vpnui"] move scratchpad
 bindsym $mod+bracketleft [class = "Vpnui"] scratchpad show, resize set 1200 650
 
-for_window [class="UXTerm"] floating enable, resize set 1500 1000
-
-# Spotify
-for_window [class="Spotify"] floating enable, resize set 1500 1000
-for_window [class = "Spotify"] move scratchpad
-bindsym $mod+bracketright [class = "Spotify"] scratchpad show, resize set 1700 1200
-
 #scratch terminal
 for_window [class="Terminator"] floating enable, resize set 1500 1000
 for_window [class = "Terminator"] move scratchpad
@@ -260,7 +253,8 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 
 # Lock Screen
 bindsym $mod+Prior exec $HOME/.config/i3/scripts/lock.sh
-
+bindsym $mod+n workspace next
+bindsym $mod+p workspace prev
 # script that will change the wallpaper
 exec_always --no-startup-id $HOME/.fehbg &
 exec_always --no-startup-id $HOME/.config/i3/scripts/launch_polybar.sh

@@ -83,9 +83,15 @@ if Player.PlaybackStatus != "Stopped":
     totalTime_print = "{:02.0f}".format(totalMins)+ ":" + "{:02.0f}".format(totalSec)
     #percentComplete = "("+str(round((currentPosition/totalLength)*100,1)) + "%)"
 
-    artist = Player.Metadata["xesam:artist"] + ": " 
-    title = Player.Metadata["xesam:title"] 
+    if "xesam:artist" in Player.Metadata:
+        artist = Player.Metadata["xesam:artist"] + ": "
+    else:
+        artist = ""
 
+    if "xesam:title" in Player.Metadata:
+        title = Player.Metadata["xesam:title"] 
+    else:
+        title = ""
     media_icon = get_media_icon(Player.Metadata["xesam:url"].lower())
     
     output = action("prev", ICON_PREV) + " " + action("playpause", ICON) + " " + action("next", ICON_NEXT) + " | " + remainingTime_print +"/" +totalTime_print + " | " + ( f"{media_icon}  " if media_icon else "" ) + artist +truncate(title, TITLE_LENGTH)
