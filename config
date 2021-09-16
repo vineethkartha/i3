@@ -80,7 +80,7 @@ bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 # start emacs
 bindsym F1 exec emacs
-bindsym F2 exec sxiv -t /mnt/d_drive/Exported
+bindsym F2 exec sxiv -t /mnt/d_drive/03_exported_images
 # start qutebrowser
 bindsym $mod+b exec qutebrowser
 
@@ -211,8 +211,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Delete exec $HOME/.config/i3/scripts/exit_menu.sh
 
-set $inner_gaps 7
-set $outer_gaps 5
+# https://github.com/Airblader/i3/wiki/Installation
+set $inner_gaps 2
+set $outer_gaps 4
 for_window [class="^.*"] border normal
 
 gaps inner $inner_gaps
@@ -227,9 +228,9 @@ for_window [title="reddit: the front page of the internet - qutebrowser"] move t
 
 # Scratch Pads-----------
 # Cisco VPN connect
-for_window [class="Vpnui"] floating enable
-for_window [class = "Vpnui"] move scratchpad
-bindsym $mod+bracketleft [class = "Vpnui"] scratchpad show, resize set 1200 650
+for_window [class="Cisco AnyConnect Secure Mobility Client"] floating enable
+for_window [class = "Cisco AnyConnect Secure Mobility Client"] move scratchpad
+bindsym $mod+bracketleft [class = "Cisco AnyConnect Secure Mobility Client"] scratchpad show, resize set 1200 650
 
 #scratch terminal
 for_window [class="Terminator"] floating enable, resize set 1500 1000
@@ -250,6 +251,8 @@ floating_minimum_size 200 x 150
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 2%+ && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 2%- && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
+bindsym $mod+q exec amixer -q -D pulse sset Master 40% && pkill -RTMIN+1 i3blocks
+bindsym $mod+o exec amixer -q -D pulse sset Master 100% && pkill -RTMIN+1 i3blocks
 
 # Lock Screen
 bindsym $mod+Prior exec $HOME/.config/i3/scripts/lock.sh
