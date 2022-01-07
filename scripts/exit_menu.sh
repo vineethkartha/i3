@@ -47,11 +47,10 @@ MENU="$(rofi -no-lazy-grab -sep "|" -dmenu -i -p "Uptime: $(uptime -p|awk  '{pri
 -color-normal "$BACKGROUND_ALT,$FOREGROUND,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-active "$BACKGROUND,$aurora_red,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
 -color-urgent "$BACKGROUND,$aurora_yellow,$BACKGROUND_ALT,$HIGHLIGHT_BACKGROUND,$HIGHLIGHT_FOREGROUND" \
-<<< " Lock| Logout| Reboot| Shutdown")"
+<<< " Lock| Logout| Shutdown")"
 case "$MENU" in
   *Lock) /home/vineeth/.config/i3/scripts/lock.sh;;
   *Logout) i3-msg exit;;
-  *Reboot) sudo reboot now;;
   *Shutdown) shutdown now;;
 esac
 

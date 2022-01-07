@@ -80,7 +80,7 @@ bindsym $mod+Return exec gnome-terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 # start emacs
 bindsym F1 exec emacs
-bindsym F2 exec sxiv -t /mnt/d_drive/03_exported_images
+bindsym F2 exec sxiv -t /media/vineeth/projects/03_exported_images
 # start qutebrowser
 bindsym $mod+b exec qutebrowser
 
@@ -241,6 +241,10 @@ bindsym $mod+backslash [class = "Terminator"] scratchpad show, resize set 1700 1
 for_window [class="Blueman-manager"] floating enable, resize set 1500 800
 for_window [class="Blueman-manager"] move scratchpad
 bindsym $mod+apostrophe [class="Blueman-manager"] scratchpad show 
+
+for_window [class="pentablet"] floating enable, resize set 1500 800
+#for_window [class="pentablet"] move scratchpad
+#bindsym $mod+apostrophe [class="Blueman-manager"] scratchpad show 
 
 
 for_window [class="Yad" title="yad-calendar"] floating enable
